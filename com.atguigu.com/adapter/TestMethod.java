@@ -1,7 +1,7 @@
 package adapter;
 
-import org.springframework.expression.Expression;
-import org.springframework.expression.spel.standard.SpelExpressionParser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @version v1.0
@@ -10,11 +10,12 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
  * @date: 2019/8/31
  */
 public class TestMethod {
-    
+
+    @Autowired
+    private RestTemplate restTemplate;
+
     public static void main(String[] args) {
-        SpelExpressionParser expParser = new SpelExpressionParser();
-        Expression expression = expParser.parseExpression("100*(2+400)*1+66");
-        System.out.println(expression.getValue());
+
     }
     
 }
